@@ -2,55 +2,169 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Veículo</title>
+    <style>
+        /* Estilos idênticos ao PDF original da atividade */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a4a75;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        fieldset {
+            border: 2px solid #a2bccc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #1a4a75;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        /* Inputs idênticos aos do PDF */
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"], 
+        input[type="password"], 
+        input[type="date"], 
+        input[type="time"], 
+        input[type="datetime-local"], 
+        input[type="month"], 
+        input[type="week"], 
+        input[type="url"], 
+        select, 
+        textarea {
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Alinhamento horizontal dos rádios e checkboxes igual ao PDF */
+        .inline-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .inline-options label {
+            font-weight: normal;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .inline-options input {
+            margin-right: 4px;
+        }
+
+        /* Botões alinhados no canto inferior direito igual à foto */
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        .btn-group input, .btn-group button {
+            background-color: #f8f9fa;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 6px 16px;
+            font-size: 13px;
+            color: #333333;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn-group input:hover, .btn-group button:hover {
+            background-color: #e8e9ea;
+            border-color: #adadad;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Link direto com o arquivo original indicado no rodapé da imagem -->
-    <!-- file:///var/www/html/charles/exemplo1semcss/form_cad_car.html -->
-
     <form action="https://web3forms.com" method="POST" enctype="multipart/form-data">
         
-        <!-- Token de Destino para enviar os dados ao e-mail cadastrado -->
+        <!-- Configuração para enviar os dados direto ao seu e-mail -->
         <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
-        <input type="hidden" name="subject" value="Novo Cadastro de Veículo">
+        <input type="hidden" name="subject" value="Novo Cadastro de Veículo Recebido">
 
         <h1>Cadastro de Veículo</h1>
 
-        <!-- SEÇÃO 1: DADOS DO PROPRIETÁRIO -->
+        <!-- DADOS DO PROPRIETÁRIO -->
         <fieldset>
             <legend>Dados do Proprietário</legend>
-            <p>
-                <label>Nome Completo</label><br>
+            <div class="form-group">
+                <label>Nome Completo</label>
                 <input type="text" name="Nome Completo" placeholder="Digite seu nome" required>
-            </p>
-            <p>
-                <label>CPF</label><br>
+            </div>
+            <div class="form-group">
+                <label>CPF</label>
                 <input type="text" name="CPF" placeholder="000.000.000-00" required>
-            </p>
-            <p>
-                <label>Senha do Sistema</label><br>
+            </div>
+            <div class="form-group">
+                <label>Senha do Sistema</label>
                 <input type="password" name="Senha do Sistema" required>
-            </p>
-            <p>
-                <label>E-mail</label><br>
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
                 <input type="email" name="E-mail" required>
-            </p>
-            <p>
-                <label>Telefone</label><br>
+            </div>
+            <div class="form-group">
+                <label>Telefone</label>
                 <input type="tel" name="Telefone" required>
-            </p>
-            <p>
-                <label>Data de Nascimento</label><br>
-                <input type="date" name="Data de Nascimento" placeholder="dd/mm/aaaa" required>
-            </p>
+            </div>
+            <div class="form-group">
+                <label>Data de Nascimento</label>
+                <input type="date" name="Data de Nascimento" required>
+            </div>
         </fieldset>
 
-        <!-- SEÇÃO 2: DADOS DO VEÍCULO -->
+        <!-- DADOS DO VEÍCULO -->
         <fieldset>
             <legend>Dados do Veículo</legend>
-            <p>
-                <label>Marca</label><br>
+            <div class="form-group">
+                <label>Marca</label>
                 <select name="Marca" required>
                     <option value="">Selecione</option>
                     <option value="Chevrolet">Chevrolet</option>
@@ -61,106 +175,89 @@
                     <option value="Toyota">Toyota</option>
                     <option value="Volkswagen">Volkswagen</option>
                 </select>
-            </p>
-            <p>
-                <label>Modelo</label><br>
+            </div>
+            <div class="form-group">
+                <label>Modelo</label>
                 <input type="text" name="Modelo" required>
-            </p>
-            <p>
-                <label>Ano</label><br>
+            </div>
+            <div class="form-group">
+                <label>Ano</label>
                 <input type="text" name="Ano" required>
-            </p>
-            <p>
-                <label>Placa</label><br>
+            </div>
+            <div class="form-group">
+                <label>Placa</label>
                 <input type="text" name="Placa" required>
-            </p>
-            <p>
-                <label>RENAVAM</label><br>
+            </div>
+            <div class="form-group">
+                <label>RENAVAM</label>
                 <input type="text" name="RENAVAM" required>
-            </p>
-            <p>
-                <label>Chassi</label><br>
+            </div>
+            <div class="form-group">
+                <label>Chassi</label>
                 <input type="text" name="Chassi" required>
-            </p>
-            <p>
-                <label>Valor (R$)</label><br>
+            </div>
+            <div class="form-group">
+                <label>Valor (R$)</label>
                 <input type="text" name="Valor (R$)" required>
-            </p>
-            <p>
-                <label>Data da Compra</label><br>
-                <input type="date" name="Data da Compra" placeholder="dd/mm/aaaa" required>
-            </p>
-            <p>
-                <label>Hora da Compra</label><br>
-                <input type="time" name="Hora da Compra" placeholder="--:--">
-            </p>
-            <p>
-                <label>Data/Hora do Cadastro</label><br>
-                <input type="datetime-local" name="Data/Hora do Cadastro" placeholder="dd/mm/aaaa, --:--" required>
-            </p>
-            <p>
-                <label>Mês da Revisão</label><br>
-                <input type="month" name="Mês da Revisão" placeholder="-------- de ----">
-            </p>
-            <p>
-                <label>Semana da Revisão</label><br>
-                <input type="week" name="Semana da Revisão" placeholder="Semana --, ----">
-            </p>
-            <p>
-                <label>Cor</label><br>
-                <input type="color" name="Cor" value="#ffffff">
-            </p>
-            <p>
-                <label>Quilometragem</label><br>
+            </div>
+            <div class="form-group">
+                <label>Data da Compra</label>
+                <input type="date" name="Data da Compra" required>
+            </div>
+            <div class="form-group">
+                <label>Hora da Compra</label>
+                <input type="time" name="Hora da Compra">
+            </div>
+            <div class="form-group">
+                <label>Data/Hora do Cadastro</label>
+                <input type="datetime-local" name="Data/Hora do Cadastro" required>
+            </div>
+            <div class="form-group">
+                <label>Mês da Revisão</label>
+                <input type="month" name="Mês da Revisão">
+            </div>
+            <div class="form-group">
+                <label>Semana da Revisão</label>
+                <input type="week" name="Semana da Revisão">
+            </div>
+            <div class="form-group">
+                <label>Cor</label>
+                <input type="color" name="Cor" value="#ffffff" style="width: 60px; height: 30px; padding: 0;">
+            </div>
+            <div class="form-group">
+                <label>Quilometragem</label>
                 <input type="range" name="Quilometragem" min="0" max="100">
-            </p>
-            <p>
-                <label>Link do Anúncio</label><br>
+            </div>
+            <div class="form-group">
+                <label>Link do Anúncio</label>
                 <input type="url" name="Link do Anúncio">
-            </p>
-            <p>
-                <label>Foto do Veículo</label><br>
+            </div>
+            <div class="form-group">
+                <label>Foto do Veículo</label>
                 <input type="file" name="Foto do Veículo">
-            </p>
+            </div>
         </fieldset>
 
-        <!-- SEÇÃO 3: COMBUSTÍVEL, OPCIONAIS E OBSERVAÇÕES -->
+        <!-- ESPECIFICAÇÕES, OPCIONAIS E OBSERVAÇÕES -->
         <fieldset>
-            <p>
-                <label>Combustível</label><br>
-                <input type="radio" id="gasolina" name="Combustível" value="Gasolina"> <label for="gasolina">Gasolina</label>
-                <input type="radio" id="etanol" name="Combustível" value="Etanol"> <label for="etanol">Etanol</label>
-                <input type="radio" id="flex" name="Combustível" value="Flex" checked> <label for="flex">Flex</label>
-                <input type="radio" id="diesel" name="Combustível" value="Diesel"> <label for="diesel">Diesel</label>
-                <input type="radio" id="eletrico" name="Combustível" value="Elétrico"> <label for="eletrico">Elétrico</label>
-                <input type="radio" id="hibrido" name="Combustível" value="Híbrido"> <label for="hibrido">Híbrido</label>
-            </p>
+            <div class="form-group">
+                <label>Combustível</label>
+                <div class="inline-options">
+                    <input type="radio" id="gasolina" name="Combustível" value="Gasolina"><label for="gasolina">Gasolina</label>
+                    <input type="radio" id="etanol" name="Combustível" value="Etanol"><label for="etanol">Etanol</label>
+                    <input type="radio" id="flex" name="Combustível" value="Flex" checked><label for="flex">Flex</label>
+                    <input type="radio" id="diesel" name="Combustível" value="Diesel"><label for="diesel">Diesel</label>
+                    <input type="radio" id="eletrico" name="Combustível" value="Elétrico"><label for="eletrico">Elétrico</label>
+                    <input type="radio" id="hibrido" name="Combustível" value="Híbrido"><label for="hibrido">Híbrido</label>
+                </div>
+            </div>
 
-            <p>
-                <label>Opcionais</label><br>
-                <input type="checkbox" id="ar" name="Opcionais[]" value="Ar-condicionado"> <label for="ar">Ar-condicionado</label>
-                <input type="checkbox" id="direcao" name="Opcionais[]" value="Direção Hidráulica"> <label for="direcao">Direção Hidráulica</label>
-                <input type="checkbox" id="airbag" name="Opcionais[]" value="Airbag"> <label for="airbag">Airbag</label>
-                <input type="checkbox" id="abs" name="Opcionais[]" value="ABS"> <label for="abs">ABS</label>
-                <input type="checkbox" id="multimidia" name="Opcionais[]" value="Multimídia"> <label for="multimidia">Multimídia</label>
-                <input type="checkbox" id="sensor" name="Opcionais[]" value="Sensor de Ré"> <label for="sensor">Sensor de Ré</label>
-                <input type="checkbox" id="camera" name="Opcionais[]" value="Câmera de Ré"> <label for="camera">Câmera de Ré</label>
-                <input type="checkbox" id="teto" name="Opcionais[]" value="Teto Solar"> <label for="teto">Teto Solar</label>
-            </p>
-
-            <p>
-                <label>Observações</label><br>
-                <textarea name="Observações" rows="5" placeholder="Digite observações sobre o veículo"></textarea>
-            </p>
-        </fieldset>
-
-        <!-- BOTÕES NATIVOS EXATOS DO NAVEGADOR -->
-        <p style="text-align: center;">
-            <input type="submit" value="Cadastrar">
-            <input type="reset" value="Limpar">
-            <button type="button" onclick="alert('Cancelado')">Cancelar</button>
-        </p>
-
-    </form>
-</body>
-</html>
+            <div class="form-group">
+                <label>Opcionais</label>
+                <div class="inline-options">
+                    <input type="checkbox" id="ar" name="Opcionais[]" value="Ar-condicionado"><label for="ar">Ar-condicionado</label>
+                    <input type="checkbox" id="direcao" name="Opcionais[]" value="Direção Hidráulica"><label for="direcao">Direção Hidráulica</label>
+                    <input type="checkbox" id="airbag" name="Opcionais[]" value="Airbag"><label for="airbag">Airbag</label>
+                    <input type="checkbox" id="abs" name="Opcionais[]" value="ABS"><label for="abs">ABS</label>
+                    <input type="checkbox" id="multimidia" name="Opcionais[]" value="Multimídia"><label for="multimidia">Multimídia</label>
+                    <input type="checkbox" id="sensor" name="Opcionais[]" value="Sensor de Ré"><label for="sensor">Sensor de Ré</label>
