@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Veículo</title>
+</head>
+<body>
+
+    <!-- Link direto com o arquivo original indicado no rodapé da imagem -->
+    <!-- file:///var/www/html/charles/exemplo1semcss/form_cad_car.html -->
+
+    <form action="https://web3forms.com" method="POST" enctype="multipart/form-data">
+        
+        <!-- Token de Destino para enviar os dados ao e-mail cadastrado -->
+        <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
+        <input type="hidden" name="subject" value="Novo Cadastro de Veículo">
+
+        <h1>Cadastro de Veículo</h1>
+
+        <!-- SEÇÃO 1: DADOS DO PROPRIETÁRIO -->
+        <fieldset>
+            <legend>Dados do Proprietário</legend>
+            <p>
+                <label>Nome Completo</label><br>
+                <input type="text" name="Nome Completo" placeholder="Digite seu nome" required>
+            </p>
+            <p>
+                <label>CPF</label><br>
+                <input type="text" name="CPF" placeholder="000.000.000-00" required>
+            </p>
+            <p>
+                <label>Senha do Sistema</label><br>
+                <input type="password" name="Senha do Sistema" required>
+            </p>
+            <p>
+                <label>E-mail</label><br>
+                <input type="email" name="E-mail" required>
+            </p>
+            <p>
+                <label>Telefone</label><br>
+                <input type="tel" name="Telefone" required>
+            </p>
+            <p>
+                <label>Data de Nascimento</label><br>
+                <input type="date" name="Data de Nascimento" placeholder="dd/mm/aaaa" required>
+            </p>
+        </fieldset>
+
+        <!-- SEÇÃO 2: DADOS DO VEÍCULO -->
+        <fieldset>
+            <legend>Dados do Veículo</legend>
+            <p>
+                <label>Marca</label><br>
+                <select name="Marca" required>
+                    <option value="">Selecione</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                </select>
+            </p>
+            <p>
+                <label>Modelo</label><br>
+                <input type="text" name="Modelo" required>
+            </p>
+            <p>
+                <label>Ano</label><br>
+                <input type="text" name="Ano" required>
+            </p>
+            <p>
+                <label>Placa</label><br>
+                <input type="text" name="Placa" required>
+            </p>
+            <p>
+                <label>RENAVAM</label><br>
+                <input type="text" name="RENAVAM" required>
+            </p>
+            <p>
+                <label>Chassi</label><br>
+                <input type="text" name="Chassi" required>
+            </p>
+            <p>
+                <label>Valor (R$)</label><br>
+                <input type="text" name="Valor (R$)" required>
+            </p>
+            <p>
+                <label>Data da Compra</label><br>
+                <input type="date" name="Data da Compra" placeholder="dd/mm/aaaa" required>
+            </p>
+            <p>
+                <label>Hora da Compra</label><br>
+                <input type="time" name="Hora da Compra" placeholder="--:--">
+            </p>
+            <p>
+                <label>Data/Hora do Cadastro</label><br>
+                <input type="datetime-local" name="Data/Hora do Cadastro" placeholder="dd/mm/aaaa, --:--" required>
+            </p>
+            <p>
+                <label>Mês da Revisão</label><br>
+                <input type="month" name="Mês da Revisão" placeholder="-------- de ----">
+            </p>
+            <p>
+                <label>Semana da Revisão</label><br>
+                <input type="week" name="Semana da Revisão" placeholder="Semana --, ----">
+            </p>
+            <p>
+                <label>Cor</label><br>
+                <input type="color" name="Cor" value="#ffffff">
+            </p>
+            <p>
+                <label>Quilometragem</label><br>
+                <input type="range" name="Quilometragem" min="0" max="100">
+            </p>
+            <p>
+                <label>Link do Anúncio</label><br>
+                <input type="url" name="Link do Anúncio">
+            </p>
+            <p>
+                <label>Foto do Veículo</label><br>
+                <input type="file" name="Foto do Veículo">
+            </p>
+        </fieldset>
+
+        <!-- SEÇÃO 3: COMBUSTÍVEL, OPCIONAIS E OBSERVAÇÕES -->
+        <fieldset>
+            <p>
+                <label>Combustível</label><br>
+                <input type="radio" id="gasolina" name="Combustível" value="Gasolina"> <label for="gasolina">Gasolina</label>
+                <input type="radio" id="etanol" name="Combustível" value="Etanol"> <label for="etanol">Etanol</label>
+                <input type="radio" id="flex" name="Combustível" value="Flex" checked> <label for="flex">Flex</label>
+                <input type="radio" id="diesel" name="Combustível" value="Diesel"> <label for="diesel">Diesel</label>
+                <input type="radio" id="eletrico" name="Combustível" value="Elétrico"> <label for="eletrico">Elétrico</label>
+                <input type="radio" id="hibrido" name="Combustível" value="Híbrido"> <label for="hibrido">Híbrido</label>
+            </p>
+
+            <p>
+                <label>Opcionais</label><br>
+                <input type="checkbox" id="ar" name="Opcionais[]" value="Ar-condicionado"> <label for="ar">Ar-condicionado</label>
+                <input type="checkbox" id="direcao" name="Opcionais[]" value="Direção Hidráulica"> <label for="direcao">Direção Hidráulica</label>
+                <input type="checkbox" id="airbag" name="Opcionais[]" value="Airbag"> <label for="airbag">Airbag</label>
+                <input type="checkbox" id="abs" name="Opcionais[]" value="ABS"> <label for="abs">ABS</label>
+                <input type="checkbox" id="multimidia" name="Opcionais[]" value="Multimídia"> <label for="multimidia">Multimídia</label>
+                <input type="checkbox" id="sensor" name="Opcionais[]" value="Sensor de Ré"> <label for="sensor">Sensor de Ré</label>
+                <input type="checkbox" id="camera" name="Opcionais[]" value="Câmera de Ré"> <label for="camera">Câmera de Ré</label>
+                <input type="checkbox" id="teto" name="Opcionais[]" value="Teto Solar"> <label for="teto">Teto Solar</label>
+            </p>
+
+            <p>
+                <label>Observações</label><br>
+                <textarea name="Observações" rows="5" placeholder="Digite observações sobre o veículo"></textarea>
+            </p>
+        </fieldset>
+
+        <!-- BOTÕES NATIVOS EXATOS DO NAVEGADOR -->
+        <p style="text-align: center;">
+            <input type="submit" value="Cadastrar">
+            <input type="reset" value="Limpar">
+            <button type="button" onclick="alert('Cancelado')">Cancelar</button>
+        </p>
+
+    </form>
+</body>
+</html>
